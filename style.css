@@ -1,0 +1,466 @@
+/* =========================================================
+   style.css
+   This one file controls how ALL FOUR pages look.
+   Change something here and every page updates.
+   ========================================================= */
+
+
+/* ---------- 1. Colours and fonts ----------
+   These are "variables". We name a colour once (like --black)
+   and use it everywhere with var(--black).
+   To change the black everywhere, change it here only. */
+:root {
+  --white: #ffffff;
+  --cream: #f6f5f2;   /* light grey-beige used behind the phone picture */
+  --black: #0b0b0b;
+  --grey:  #6f6d69;   /* softer text */
+  --line:  #e4e2de;   /* thin dividing lines */
+
+  --fancy-font: "Cormorant Garamond", Georgia, serif;   /* the semi-cursive headings */
+  --plain-font: "Jost", Arial, sans-serif;              /* normal text */
+}
+
+
+/* ---------- 2. Basic page setup ---------- */
+* {
+  box-sizing: border-box;   /* makes widths easier to work with */
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--plain-font);
+  font-weight: 300;          /* thin text looks more elegant */
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* All headings use the fancy italic font */
+h1, h2, h3 {
+  font-family: var(--fancy-font);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+h1 { font-size: 80px; }
+h2 { font-size: 48px; }
+h3 { font-size: 26px; }
+
+p { margin: 0 0 16px; }
+
+/* Keeps the content in the middle of the screen, not too wide */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Space above and below each section of a page */
+.section {
+  padding: 80px 0;
+}
+
+/* Small spaced-out capital words above headings, e.g. "THE PROBLEM" */
+.small-title {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 14px;
+}
+
+/* Bigger grey intro paragraph */
+.intro {
+  font-size: 20px;
+  color: var(--grey);
+  max-width: 600px;
+}
+
+
+/* ---------- 3. Buttons ---------- */
+.button {
+  display: inline-block;
+  padding: 15px 28px;
+  border: 1px solid var(--black);
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--plain-font);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;   /* removes the underline from links */
+  cursor: pointer;
+  margin: 0 8px 8px 0;     /* a little space between buttons */
+}
+.button:hover {            /* :hover = when the mouse is over it */
+  background: var(--black);
+  color: var(--white);
+}
+
+/* A black version of the button */
+.button.black {
+  background: var(--black);
+  color: var(--white);
+}
+.button.black:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+
+/* ---------- 4. Top menu (header) ---------- */
+header {
+  border-bottom: 1px solid var(--line);
+}
+header .container {
+  display: flex;                    /* puts items side by side */
+  justify-content: space-between;   /* logo on the left, links on the right */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.logo {
+  font-family: var(--fancy-font);
+  font-style: italic;
+  font-size: 30px;
+  color: var(--black);
+  text-decoration: none;
+}
+nav a {
+  margin-left: 26px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--grey);
+  text-decoration: none;
+}
+nav a:hover,
+nav a.current {                     /* "current" = the page you are on */
+  color: var(--black);
+  border-bottom: 1px solid var(--black);
+}
+
+
+/* ---------- 5. Home page: big top section (hero) ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 90px 0;
+}
+.hero-text {
+  flex: 1.3;     /* text takes a bit more space than the picture */
+}
+.hero-picture {
+  flex: 1;
+  background: var(--cream);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+
+/* ---------- 6. The phone drawing (made only with CSS) ---------- */
+.phone {
+  display: inline-block;
+  position: relative;
+  width: 180px;
+  height: 376px;
+  border-radius: 34px;
+  background: #ece9e3;
+  box-shadow: 0 30px 50px -30px rgba(0, 0, 0, 0.5);
+}
+.lens {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;          /* 50% makes a circle */
+  background: #111;
+  border: 3px solid #555;
+}
+.lens.one   { top: 22px; left: 20px; }
+.lens.two   { top: 62px; left: 20px; }
+.lens.three { top: 22px; left: 60px; }
+
+
+/* ---------- 7. Three columns (used on several pages) ---------- */
+.three-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;   /* three equal columns */
+  gap: 40px;
+}
+.column {
+  border-top: 1px solid var(--black);
+  padding-top: 22px;
+}
+.column p {
+  color: var(--grey);
+}
+.step-number {
+  font-family: var(--fancy-font);
+  font-style: italic;
+  font-size: 40px;
+}
+
+
+/* ---------- 8. Black box at the bottom of pages ---------- */
+.black-box {
+  background: var(--black);
+  color: var(--white);
+  padding: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.black-box h2 {
+  margin: 0;
+}
+.black-box .button:hover {
+  border-color: var(--white);   /* keeps the outline visible on the black background */
+}
+
+
+/* ---------- 9. Quotes (Features page) ---------- */
+.quote {
+  font-family: var(--fancy-font);
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1.3;
+  border-left: 1px solid var(--black);
+  padding-left: 24px;
+  margin-bottom: 28px;
+}
+
+
+/* ---------- 10. Pricing cards ---------- */
+.price-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid var(--line);
+}
+.price-card {
+  padding: 36px 30px;
+  border-right: 1px solid var(--line);
+}
+.price-card:last-child {
+  border-right: none;
+}
+.price-card.popular {               /* the middle card is black */
+  background: var(--black);
+  color: var(--white);
+}
+.price {
+  font-family: var(--fancy-font);
+  font-size: 62px;
+  line-height: 1;
+}
+.price-card ul {
+  list-style: none;                 /* removes the bullet points */
+  padding: 0;
+  margin: 24px 0 30px;
+}
+.price-card li {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.price-card.popular li {
+  border-bottom-color: #333;
+}
+.price-card.popular .button {
+  background: var(--white);
+  color: var(--black);
+}
+.price-card.popular .button:hover {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--white);
+}
+
+/* FAQ: <details> boxes open and close by themselves, no code needed */
+details {
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+  max-width: 800px;
+}
+summary {
+  cursor: pointer;
+  font-family: var(--fancy-font);
+  font-style: italic;
+  font-size: 24px;
+}
+details p {
+  color: var(--grey);
+  margin-top: 12px;
+}
+
+
+/* ---------- 11. Team page ---------- */
+.member {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+.initials {
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fancy-font);
+  font-style: italic;
+  font-size: 24px;
+  flex-shrink: 0;                   /* stops the circle from getting squished */
+}
+.member-name {
+  font-family: var(--fancy-font);
+  font-style: italic;
+  font-size: 24px;
+  display: block;
+}
+.student-number {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--grey);
+}
+
+
+/* ---------- 12. Footer ---------- */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 0;
+  margin-top: 60px;
+  color: var(--grey);
+  font-size: 14px;
+}
+
+
+/* ---------- 13. Chatbot ---------- */
+/* The round button in the bottom-right corner */
+#chat-button {
+  position: fixed;           /* stays in place when you scroll */
+  right: 20px;
+  bottom: 20px;
+  padding: 15px 22px;
+  border: none;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--plain-font);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* The chat window (hidden until you click the button) */
+#chat-window {
+  display: none;             /* hidden at the start */
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 360px;
+  height: 520px;
+  max-width: calc(100% - 40px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.35);
+  flex-direction: column;
+}
+#chat-window.open {
+  display: flex;             /* chatbot.js adds the "open" class to show it */
+}
+.chat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--black);
+  color: var(--white);
+  padding: 14px 18px;
+  font-family: var(--fancy-font);
+  font-style: italic;
+  font-size: 22px;
+}
+#chat-close {
+  background: none;
+  border: 1px solid #555;
+  color: var(--white);
+  font-size: 18px;
+  cursor: pointer;
+}
+#chat-messages {
+  flex: 1;                   /* takes up all the free space */
+  overflow-y: auto;          /* scrolls when there are many messages */
+  padding: 16px;
+}
+.message {
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  font-size: 14.5px;
+  max-width: 85%;
+}
+.message.bot {
+  background: var(--cream);
+}
+.message.user {
+  background: var(--black);
+  color: var(--white);
+  margin-left: auto;         /* pushes your messages to the right */
+}
+.quick-questions {
+  padding: 0 16px 10px;
+}
+.quick-questions button {
+  border: 1px solid var(--black);
+  background: var(--white);
+  font-family: var(--plain-font);
+  font-size: 13px;
+  padding: 6px 10px;
+  margin: 0 4px 6px 0;
+  cursor: pointer;
+}
+#chat-form {
+  display: flex;
+  border-top: 1px solid var(--line);
+  padding: 12px;
+}
+#chat-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--line);
+  font-family: var(--plain-font);
+  font-size: 14.5px;
+}
+#chat-form button {
+  border: none;
+  background: var(--black);
+  color: var(--white);
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+
+/* ---------- 14. Phones and small screens ----------
+   Everything inside here only applies when the screen
+   is 800px wide or less. We stack things in one column. */
+@media (max-width: 800px) {
+  h1 { font-size: 52px; }
+  h2 { font-size: 36px; }
+  .container { padding: 0 18px; }
+  .hero { flex-direction: column; padding: 50px 0; }
+  .hero-picture { width: 100%; }
+  .three-columns,
+  .price-cards { grid-template-columns: 1fr; }
+  .price-card { border-right: none; border-bottom: 1px solid var(--line); }
+  nav a { margin: 0 18px 0 0; }
+  .black-box { padding: 36px 24px; }
+}
