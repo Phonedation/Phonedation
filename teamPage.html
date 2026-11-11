@@ -1,52 +1,8 @@
-<!-- This will be the page you open to see our awesome team members. -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team | PhoneBuilder</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Jost:wght@300;400&display=swap">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- ===== TOP MENU ===== -->
-  <header>
-    <div class="container">
-      <a class="logo" href="index.html">PhoneBuilder</a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="features.html">Features</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="team.html" class="current">Team</a>
-      </nav>
-    </div>
-  </header>
-
-
-  <!-- ===== PAGE TITLE ===== -->
-  <div class="container section">
-    <span class="small-title">The team</span>
-    <h1>Phonedation</h1>
-    <p class="intro">
-      We are six students who want buying a phone to be simple. Our goal is for users
-      to understand every choice they make and stay in control of the final result.
-    </p>
-  </div>
-
-
-  <!-- ===== TEAM MEMBERS =====
-       Each member is one block. To add a person, copy a block and change the text.
-       member-role = the person's role in the startup
-       member-work = the part of the website they built -->
-  <div class="container">
-    <div class="three-columns">
-
       <div class="member">
         <div class="initials">JE</div>
         <div>
           <span class="member-name">Joshua El-Chibani</span>
-          <span class="member-role">CEO &amp; Project Lead</span>
+          <span class="member-role">Project Lead</span>
           <span class="member-work">Home page · Project management</span>
           <span class="student-number">STUDENT NO. 300524335</span>
         </div>
@@ -56,88 +12,8 @@
         <div class="initials">EQ</div>
         <div>
           <span class="member-name">E-J Qendro</span>
-          <span class="member-role">COO &amp; Project Manager</span>
+          <span class="member-role">Project Manager</span>
           <span class="member-work">Home page · Project management</span>
           <span class="student-number">STUDENT NO. 300521778</span>
         </div>
       </div>
-
-      <div class="member">
-        <div class="initials">NE</div>
-        <div>
-          <span class="member-name">Nsasso Mbia Eweba Yves</span>
-          <span class="member-role">Chief Technology Officer</span>
-          <span class="member-work">Features page</span>
-          <span class="student-number">STUDENT NO. 300563983</span>
-        </div>
-      </div>
-
-      <div class="member">
-        <div class="initials">OB</div>
-        <div>
-          <span class="member-name">Ouassim Bendahmane</span>
-          <span class="member-role">Chief Product Officer</span>
-          <span class="member-work">Features page</span>
-          <span class="student-number">STUDENT NO. 300551274</span>
-        </div>
-      </div>
-
-      <div class="member">
-        <div class="initials">BH</div>
-        <div>
-          <span class="member-name">Ben Huszagh</span>
-          <span class="member-role">Chief Financial Officer</span>
-          <span class="member-work">Pricing page</span>
-          <span class="student-number">STUDENT NO. 300554465</span>
-        </div>
-      </div>
-
-      <div class="member">
-        <div class="initials">SM</div>
-        <div>
-          <span class="member-name">Sylviane Metchom Nguepeing</span>
-          <span class="member-role">Chief Marketing Officer</span>
-          <span class="member-work">Pricing page</span>
-          <span class="student-number">STUDENT NO. 300544198</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- The team page itself was a group effort -->
-    <p class="team-note">This team page was built by all six of us together.</p>
-  </div>
-
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="container">
-      PhoneBuilder · Designed by you, guided by AI. · A Team Phonedation project
-    </div>
-  </footer>
-
-
-  <!-- ===== CHATBOT ===== -->
-  <button id="chat-button">Ask the assistant</button>
-
-  <div id="chat-window">
-    <div class="chat-top">
-      Assistant
-      <button id="chat-close">×</button>
-    </div>
-    <div id="chat-messages"></div>
-    <div class="quick-questions">
-      <button data-question="How much does it cost?">Price</button>
-      <button data-question="How does it work?">How it works</button>
-      <button data-question="Help me choose">Help me choose</button>
-      <button data-question="Who made this?">Team</button>
-    </div>
-    <form id="chat-form">
-      <input id="chat-input" type="text" placeholder="Type a question...">
-      <button type="submit">Send</button>
-    </form>
-  </div>
-
-  <script src="chatbot.js"></script>
-</body>
-</html>
