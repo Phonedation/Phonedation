@@ -119,3 +119,28 @@
       PhoneBuilder · Designed by you, guided by AI. · A Team Phonedation project
     </div>
   </footer>
+
+  <!-- ===== CHATBOT ===== -->
+  <button id="chat-button">Ask the assistant</button>
+
+  <div id="chat-window">
+    <div class="chat-top">
+      Assistant
+      <button id="chat-close">×</button>
+    </div>
+    <div id="chat-messages"></div>
+    <div class="quick-questions">
+      <button data-question="How much does it cost?">Price</button>
+      <button data-question="How does it work?">How it works</button>
+      <button data-question="Help me choose">Help me choose</button>
+      <button data-question="Who made this?">Team</button>
+    </div>
+    <form id="chat-form">
+      <input id="chat-input" type="text" placeholder="Type a question...">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>
