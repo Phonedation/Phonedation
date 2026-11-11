@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | PhoneBuilder</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Jost:wght@300;400&display=swap">
+  <link rel="stylesheet" href="style.css">
 
+  <!-- Styles for this page only -->
+  <style>
+    .phones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
+    .phone-card { border: 1px solid #e3e1dd; display: flex; flex-direction: column; background: #fff; }
+    .phone-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .phone-body { padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .phone-job { font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: #6e6c69; }
+    .phone-top { display: flex; justify-content: space-between; align-items: baseline; }
+    .phone-name { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: 32px; }
+    .phone-price { font-family: "Cormorant Garamond", Georgia, serif; font-size: 36px; }
+    .phone-monthly { font-size: 13px; color: #6e6c69; }
+    .phone-specs { list-style: none; padding: 12px 0 0; margin: 0; border-top: 1px solid #e3e1dd; font-size: 15px; }
+    .phone-specs li { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f0eeea; }
+    .phone-specs li span:first-child { color: #6e6c69; }
+    .phone-card.featured { background: #0b0b0b; color: #fff; border-color: #0b0b0b; }
+    .phone-card.featured .phone-job,
+    .phone-card.featured .phone-monthly,
+    .phone-card.featured .phone-specs li span:first-child { color: #a8a5a0; }
+    .phone-card.featured .phone-specs, .phone-card.featured .phone-specs li { border-color: #2a2927; }
+    .formula { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; font-family: "Cormorant Garamond", Georgia, serif; font-size: 34px; }
+    .formula .term { border: 1px solid #e3e1dd; padding: 12px 20px; }
+    .formula .term small { display: block; font-family: "Jost", Arial, sans-serif; font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: #6e6c69; }
+    @media (max-width: 860px) { .phones { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- ===== TOP MENU ===== -->
+  <header>
+    <div class="container">
+      <a class="logo" href="index.html">PhoneBuilder</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="product.html" class="current">Product</a>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="team.html">Team</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ===== PAGE TITLE ===== -->
+  <div class="container section">
+    <span class="small-title">The product</span>
+    <h1>A different phone for every job.</h1>
+    <p class="intro">
+      Pick a starting point, then change any part. The assistant explains every trade-off
+      and keeps you inside your budget.
+    </p>
+  </div>
+
+
+  <!-- ===== PHONE OPTIONS =====
+       Each phone is one card. Put your photos in an "images" folder with these names. -->
+  <div class="container">
+    <div class="phones">
+
+      <div class="phone-card">
+        <img src="images/delivery-driver.jpg" alt="A delivery driver on a red scooter">
+        <div class="phone-body">
+          <span class="phone-job">Delivery driver</span>
+          <div class="phone-top">
+            <span class="phone-name">Essential</span>
+            <span class="phone-price">$534</span>
+          </div>
+          <span class="phone-monthly">or $22/month for 24 months · calls, maps and messages all day</span>
+          <ul class="phone-specs">
+            <li><span>Screen</span><span>6.1" OLED · 60 Hz</span></li>
+            <li><span>Chip</span><span>Efficient · 8 GB</span></li>
+            <li><span>Camera</span><span>Dual 50 MP</span></li>
+            <li><span>Battery</span><span>5,000 mAh</span></li>
+            <li><span>Storage</span><span>128 GB</span></li>
+            <li><span>Design</span><span>Aluminum</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phone-card featured">
+        <img src="images/real-estate-agent.jpg" alt="A real estate agent beside a SOLD sign">
+        <div class="phone-body">
+          <span class="phone-job">Real estate agent</span>
+          <div class="phone-top">
+            <span class="phone-name">Everyday</span>
+            <span class="phone-price">$894</span>
+          </div>
+          <span class="phone-monthly">or $37/month for 24 months · sharp photos of every listing</span>
+          <ul class="phone-specs">
+            <li><span>Screen</span><span>6.4" OLED · 120 Hz</span></li>
+            <li><span>Chip</span><span>Performance · 12 GB</span></li>
+            <li><span>Camera</span><span>Triple · 3× zoom</span></li>
+            <li><span>Battery</span><span>5,000 mAh</span></li>
+            <li><span>Storage</span><span>256 GB</span></li>
+            <li><span>Design</span><span>Recycled aluminum</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phone-card">
+        <img src="images/photographer.jpg" alt="A photographer shooting flowers with a phone">
+        <div class="phone-body">
+          <span class="phone-job">Photographer</span>
+          <div class="phone-top">
+            <span class="phone-name">Pro</span>
+            <span class="phone-price">$1,444</span>
+          </div>
+          <span class="phone-monthly">or $60/month for 24 months · close-ups, 5× zoom, 4K video</span>
+          <ul class="phone-specs">
+            <li><span>Screen</span><span>6.8" LTPO OLED</span></li>
+            <li><span>Chip</span><span>Flagship · 16 GB</span></li>
+            <li><span>Camera</span><span>Pro · 5× periscope</span></li>
+            <li><span>Battery</span><span>6,000 mAh</span></li>
+            <li><span>Storage</span><span>512 GB</span></li>
+            <li><span>Design</span><span>Titanium</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ===== HOW THE PRICE WORKS ===== -->
+  <div class="container section">
+    <span class="small-title">How the price works</span>
+    <div class="formula">
+      <div class="term"><small>Base</small>$199</div>
+      <span>+</span>
+      <div class="term"><small>Your 6 parts</small>$310 and up</div>
+      <span>=</span>
+      <div class="term"><small>Your phone</small>$509 – $1,584</div>
+    </div>
+    <p class="intro">
+      The base covers the frame, mainboard, 5G, speakers, sensors, assembly and a 1-year warranty.
+      Colours are free. Prices in CAD, before tax.
+    </p>
+  </div>
+
+
+  <!-- ===== BLACK BOX ===== -->
+  <div class="container">
+    <div class="black-box">
+      <h2>Not sure which one fits you?</h2>
+      <button class="button open-chat">Ask the assistant</button>
+    </div>
+  </div>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      PhoneBuilder · Designed by you, guided by AI. · A Team Phonedation project
+    </div>
+  </footer>
+
+
+  <!-- ===== CHATBOT ===== -->
+  <button id="chat-button">Ask the assistant</button>
+
+  <div id="chat-window">
+    <div class="chat-top">
+      Assistant
+      <button id="chat-close">×</button>
+    </div>
+    <div id="chat-messages"></div>
+    <div class="quick-questions">
+      <button data-question="How much does it cost?">Price</button>
+      <button data-question="How does it work?">How it works</button>
+      <button data-question="Help me choose">Help me choose</button>
+      <button data-question="Who made this?">Team</button>
+    </div>
+    <form id="chat-form">
+      <input id="chat-input" type="text" placeholder="Type a question...">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>
