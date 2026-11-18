@@ -1,8 +1,5 @@
 /* =========================================================
-   chatbot.js
-   This makes the "Ask the assistant" chat box work.
-
-   How it works (no real AI):
+   How it works (there is no actual AI):
    1. You type a question.
    2. The code looks for keywords in it (like "price" or "battery").
    3. It shows the prepared answer that matches.
@@ -14,8 +11,7 @@
    - keywords: words to look for in the question
    - reply:    what the chatbot says back
    The bot checks them from top to bottom and uses the FIRST match,
-   so specific topics (battery, camera) come before general ones (help).
-   To teach the bot something new, copy one block and edit it. */
+   so specific topics (battery, camera) come before general ones (help). */
 const answers = [
   {
     keywords: ["price", "cost", "how much", "expensive", "cheap"],
