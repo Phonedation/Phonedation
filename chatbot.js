@@ -1,17 +1,4 @@
-/* =========================================================
-   How it works (there is no actual AI):
-   1. You type a question.
-   2. The code looks for keywords in it (like "price" or "battery").
-   3. It shows the prepared answer that matches.
-   ========================================================= */
-
-
-/* ---------- 1. The answers the chatbot knows ----------
-   Each answer has:
-   - keywords: words to look for in the question
-   - reply:    what the chatbot says back
-   The bot checks them from top to bottom and uses the FIRST match,
-   so specific topics (battery, camera) come before general ones (help). */
+/* The answers the chatbot knows */
 const answers = [
   {
     keywords: ["price", "cost", "how much", "expensive", "cheap"],
@@ -67,8 +54,7 @@ const answers = [
 const defaultReply = "Sorry, I'm not sure about that. Try asking about prices, the battery, the camera, storage or our team.";
 
 
-/* ---------- 2. Find the parts of the page we need ----------
-   document.getElementById finds an element by its id="..." in the HTML. */
+/* Find the parts of the page we need */
 const chatButton   = document.getElementById("chat-button");
 const chatWindow   = document.getElementById("chat-window");
 const closeButton  = document.getElementById("chat-close");
@@ -77,11 +63,11 @@ const chatForm     = document.getElementById("chat-form");
 const chatInput    = document.getElementById("chat-input");
 
 
-/* ---------- 3. Open and close the chat window ---------- */
+/* Open and close the chat window */
 function openChat() {
-  chatWindow.classList.add("open");   // style.css shows the window when it has the "open" class
-  chatButton.style.display = "none";  // hide the round button while the chat is open
-  chatInput.focus();                  // put the cursor in the text box
+  chatWindow.classList.add("open");
+  chatButton.style.display = "none";
+  chatInput.focus();
 }
 
 function closeChat() {
@@ -93,58 +79,53 @@ chatButton.addEventListener("click", openChat);
 closeButton.addEventListener("click", closeChat);
 
 
-/* ---------- 4. Show a message in the chat ----------
-   sender is either "bot" or "user" (it decides the colour). */
+/* Show a message in the chat */
 function addMessage(text, sender) {
-  const message = document.createElement("div");  // make a new <div>
+  const message = document.createElement("div");
   message.className = "message " + sender;
   message.textContent = text;
-  messagesBox.appendChild(message);               // put it in the chat
-  messagesBox.scrollTop = messagesBox.scrollHeight; // scroll to the newest message
+  messagesBox.appendChild(message);
+  messagesBox.scrollTop = messagesBox.scrollHeight;
 }
 
 
-/* ---------- 5. Choose the right answer ---------- */
+/* Choose the right answer */
 function getReply(question) {
-  const lowerCaseQuestion = question.toLowerCase();  // "PRICE" and "price" count the same
+  const lowerCaseQuestion = question.toLowerCase();
 
-  // Go through every answer, one by one
+
   for (const answer of answers) {
-    // Go through every keyword of that answer
+
     for (const keyword of answer.keywords) {
       if (lowerCaseQuestion.includes(keyword)) {
-        return answer.reply;   // found one! stop and send this reply
+        return answer.reply;
       }
     }
   }
-  return defaultReply;         // no keyword found
+  return defaultReply;
 }
 
 
-/* ---------- 6. Ask a question ---------- */
+/* Ask a question */
 function askQuestion(question) {
-  addMessage(question, "user");          // show what you asked
+  addMessage(question, "user");
 
-  // wait 0.4 seconds so it feels like the bot is thinking
   setTimeout(function () {
     addMessage(getReply(question), "bot");
   }, 400);
 }
 
-// When you press Enter or click Send
+
 chatForm.addEventListener("submit", function (event) {
-  event.preventDefault();               // stops the page from reloading
+  event.preventDefault();
   const question = chatInput.value.trim();
-  if (question === "") return;          // ignore empty messages
+  if (question === "") return;
   askQuestion(question);
-  chatInput.value = "";                 // empty the text box
+  chatInput.value = "";
 });
 
 
-/* ---------- 7. Buttons that ask a question for you ----------
-   Any button with data-question="..." in the HTML opens the chat
-   and asks that question. Used for the quick-question buttons in
-   the chat and the "Choose" buttons on the Pricing page. */
+/* Buttons that ask a question for you */
 const questionButtons = document.querySelectorAll("[data-question]");
 
 for (const button of questionButtons) {
@@ -154,7 +135,6 @@ for (const button of questionButtons) {
   });
 }
 
-// Buttons with the class "open-chat" just open the chat
 const openButtons = document.querySelectorAll(".open-chat");
 for (const button of openButtons) {
   button.addEventListener("click", openChat);
