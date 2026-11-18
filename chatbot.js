@@ -141,5 +141,5 @@ for (const button of openButtons) {
 }
 
 
-/* ---------- 8. First message when the page loads ---------- */
+/* First message when the page loads */
 addMessage("Hi! I'm the PhoneBuilder assistant. Ask me anything, or tap a question below.", "bot");
