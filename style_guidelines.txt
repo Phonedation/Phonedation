@@ -1,17 +1,61 @@
 Overall Look and Feel
 ===========================
+The overall look and feel should be minimalist, flat and elegant. We avoid 3D buttons, gradients, rounded "bubbly" shapes and bright colours.
+The site should feel calm and trustworthy, with lots of white space.
+Every page uses the same header, footer, black call-to-action box and chatbot so the site feels consistent.
 
 Colours
 ===========================
+For PhoneBuilder, colours show that we are simple, honest and premium. We use an almost
+black-and-white palette so the phone and the prices stand out.
+These are our colour swatches:
+
+- #0B0B0B  Black: main text, headings, black buttons, black boxes, the "popular" pricing card
+- #FFFFFF  White: page background, text on black
+- #F6F5F2  Cream: background behind the phone picture and the chatbot's messages
+- #6F6D69  Grey: softer text (intro paragraphs, small titles, menu links, footer)
+- #E4E2DE  Line: thin borders and dividing lines
+
+Muted green and muted red are only used inside the builder to show budget effects
+("Saves $70" / "Puts you $94 over budget").
 
 Iconography
 ===========================
+We keep icons to a minimum and use only flat, thin-line icons that match the overall look and feel.
+The phone on the home page is drawn with CSS.
+When selecting an icon, please select the correct icon for the job and keep the following in mind:
+
+- Use simple text symbols where they work: → on "Start your build" buttons, + to open FAQ items, × to close the chat
+- Icons should be outlined, 1px lines, in black or grey only
+- No filled, coloured, emoji or 3D icons
+- Circles are used for team member initials and colour swatches, keep them thin-outlined
 
 Typography
 ===========================
+We use two fonts from Google Fonts:
+
+- Cormorant Garamond (italic, 400/500) for headings, the logo, prices, step numbers, quotes and FAQ questions
+- Jost (300/400) for body text, menu links, buttons and labels
+
+Sizes:
+- h1: 80px (52px on phones), h2: 48px (36px on phones), h3: 26px
+- Body text: 17px, light weight (300), line height 1.7
+- Small titles above headings: 11px, UPPERCASE, spaced out (letter-spacing 4px), grey
+- Intro paragraphs: 20px, grey
 
 Links
 ===========================
+Links will not be underlined. Menu links are grey, uppercase and spaced out (12px, letter-spacing 3px).
+When a user hovers over a menu link, it turns black and gets a thin 1px line under it.
+The link for the page you are on stays black with the line under it.
 
 Buttons
 ===========================
+Buttons will be flat, with square corners, a 1px black border and no shadow.
+Button text is uppercase, 12px, with wide letter spacing (3px).
+
+- Main button: black background, white text
+- Secondary button: white background, black text
+- On hover, the colours swap (black becomes white and white becomes black)
+- On black backgrounds, buttons are white with a white outline on hover so they stay visible
+- The chatbot's quick-question buttons are smaller (13px, normal case) but keep the same flat, outlined style
